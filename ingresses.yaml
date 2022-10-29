@@ -1,0 +1,401 @@
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"cert-manager.io/cluster-issuer":"letsencrypt"},"name":"activation","namespace":"soxfive-beta"},"spec":{"ingressClassName":"nginx","rules":[{"host":"activation.hez.soxfive.com","http":{"paths":[{"backend":{"service":{"name":"activation","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["activation.hez.soxfive.com"],"secretName":"activation.hez.soxfive.com-tls"}]}}
+    creationTimestamp: "2022-09-25T21:16:16Z"
+    generation: 2
+    name: activation
+    namespace: soxfive-beta
+    resourceVersion: "163650"
+    uid: 3a622ec9-781e-497c-8537-b1e52287bf9b
+  spec:
+    ingressClassName: nginx
+    rules:
+    - host: activation.hez.soxfive.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: activation
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
+    tls:
+    - hosts:
+      - activation.hez.soxfive.com
+      secretName: activation.hez.soxfive.com-tls
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 167.235.111.124
+      - ip: 2a01:4f8:1c1f:61f5::1
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"cert-manager.io/cluster-issuer":"letsencrypt"},"name":"api","namespace":"soxfive-beta"},"spec":{"ingressClassName":"nginx","rules":[{"host":"api.hez.soxfive.com","http":{"paths":[{"backend":{"service":{"name":"api","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["api.hez.soxfive.com"],"secretName":"api.hez.soxfive.com-tls"}]}}
+    creationTimestamp: "2022-09-25T21:16:17Z"
+    generation: 2
+    name: api
+    namespace: soxfive-beta
+    resourceVersion: "163687"
+    uid: 5ebab4ce-de28-4738-9647-1f0164886c3e
+  spec:
+    ingressClassName: nginx
+    rules:
+    - host: api.hez.soxfive.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: api
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
+    tls:
+    - hosts:
+      - api.hez.soxfive.com
+      secretName: api.hez.soxfive.com-tls
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 167.235.111.124
+      - ip: 2a01:4f8:1c1f:61f5::1
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"cert-manager.io/cluster-issuer":"letsencrypt"},"name":"auth","namespace":"soxfive-beta"},"spec":{"ingressClassName":"nginx","rules":[{"host":"auth.hez.soxfive.com","http":{"paths":[{"backend":{"service":{"name":"auth","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["auth.hez.soxfive.com"],"secretName":"auth.hez.soxfive.com-tls"}]}}
+    creationTimestamp: "2022-09-25T21:16:18Z"
+    generation: 2
+    name: auth
+    namespace: soxfive-beta
+    resourceVersion: "163728"
+    uid: 4afd723a-5811-4be5-8720-62bf669b9e86
+  spec:
+    ingressClassName: nginx
+    rules:
+    - host: auth.hez.soxfive.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: auth
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
+    tls:
+    - hosts:
+      - auth.hez.soxfive.com
+      secretName: auth.hez.soxfive.com-tls
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 167.235.111.124
+      - ip: 2a01:4f8:1c1f:61f5::1
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"cert-manager.io/cluster-issuer":"letsencrypt"},"name":"firebase","namespace":"soxfive-beta"},"spec":{"ingressClassName":"nginx","rules":[{"host":"firebase.hez.soxfive.com","http":{"paths":[{"backend":{"service":{"name":"firebase","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["firebase.hez.soxfive.com"],"secretName":"firebase.hez.soxfive.com-tls"}]}}
+    creationTimestamp: "2022-09-25T21:16:19Z"
+    generation: 2
+    name: firebase
+    namespace: soxfive-beta
+    resourceVersion: "163773"
+    uid: c018ebe0-efdb-4e52-b2d4-802f94cfbd67
+  spec:
+    ingressClassName: nginx
+    rules:
+    - host: firebase.hez.soxfive.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: firebase
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
+    tls:
+    - hosts:
+      - firebase.hez.soxfive.com
+      secretName: firebase.hez.soxfive.com-tls
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 167.235.111.124
+      - ip: 2a01:4f8:1c1f:61f5::1
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"cert-manager.io/cluster-issuer":"letsencrypt"},"name":"panel","namespace":"soxfive-beta"},"spec":{"ingressClassName":"nginx","rules":[{"host":"hez.soxfive.com","http":{"paths":[{"backend":{"service":{"name":"playground-soxfive-panel","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["hez.soxfive.com"],"secretName":"hez.soxfive.com-tls"}]}}
+    creationTimestamp: "2022-09-26T07:12:43Z"
+    generation: 3
+    name: panel
+    namespace: soxfive-beta
+    resourceVersion: "323763"
+    uid: d15024ac-58a9-4fbb-b54c-a80ff505166a
+  spec:
+    ingressClassName: nginx
+    rules:
+    - host: hez.soxfive.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: playground-soxfive-panel
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
+    tls:
+    - hosts:
+      - hez.soxfive.com
+      secretName: hez.soxfive.com-tls
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 167.235.111.124
+      - ip: 2a01:4f8:1c1f:61f5::1
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"cert-manager.io/cluster-issuer":"letsencrypt"},"name":"proxy","namespace":"soxfive-beta"},"spec":{"ingressClassName":"nginx","rules":[{"host":"proxy.hez.soxfive.com","http":{"paths":[{"backend":{"service":{"name":"proxy","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["proxy.hez.soxfive.com"],"secretName":"proxy.hez.soxfive.com-tls"}]}}
+    creationTimestamp: "2022-09-25T21:16:21Z"
+    generation: 2
+    name: proxy
+    namespace: soxfive-beta
+    resourceVersion: "163839"
+    uid: 74b54e5b-5197-4cc9-985d-9cc116614386
+  spec:
+    ingressClassName: nginx
+    rules:
+    - host: proxy.hez.soxfive.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: proxy
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
+    tls:
+    - hosts:
+      - proxy.hez.soxfive.com
+      secretName: proxy.hez.soxfive.com-tls
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 167.235.111.124
+      - ip: 2a01:4f8:1c1f:61f5::1
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"cert-manager.io/cluster-issuer":"letsencrypt"},"name":"pushup","namespace":"soxfive-beta"},"spec":{"ingressClassName":"nginx","rules":[{"host":"pushup.hez.soxfive.com","http":{"paths":[{"backend":{"service":{"name":"pushup","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}},{"host":"hezner.quickpushup.com","http":{"paths":[{"backend":{"service":{"name":"pushup","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["pushup.hez.soxfive.com","hezner.quickpushup.com"],"secretName":"pushup-tls"}]}}
+    creationTimestamp: "2022-09-25T21:16:22Z"
+    generation: 3
+    name: pushup
+    namespace: soxfive-beta
+    resourceVersion: "456783"
+    uid: 409b8002-c01b-449e-877f-2679175a80d0
+  spec:
+    ingressClassName: nginx
+    rules:
+    - host: pushup.hez.soxfive.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: pushup
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
+    - host: hezner.quickpushup.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: pushup
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
+    tls:
+    - hosts:
+      - pushup.hez.soxfive.com
+      - hezner.quickpushup.com
+      secretName: pushup-tls
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 167.235.111.124
+      - ip: 2a01:4f8:1c1f:61f5::1
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"cert-manager.io/cluster-issuer":"letsencrypt"},"name":"repeater","namespace":"soxfive-beta"},"spec":{"ingressClassName":"nginx","rules":[{"host":"repeater.hez.soxfive.com","http":{"paths":[{"backend":{"service":{"name":"repeater","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["repeater.hez.soxfive.com"],"secretName":"repeater.hez.soxfive.com-tls"}]}}
+    creationTimestamp: "2022-09-25T21:16:24Z"
+    generation: 2
+    name: repeater
+    namespace: soxfive-beta
+    resourceVersion: "163895"
+    uid: 3b419106-4123-43cc-8ed2-060ca9e739e0
+  spec:
+    ingressClassName: nginx
+    rules:
+    - host: repeater.hez.soxfive.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: repeater
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
+    tls:
+    - hosts:
+      - repeater.hez.soxfive.com
+      secretName: repeater.hez.soxfive.com-tls
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 167.235.111.124
+      - ip: 2a01:4f8:1c1f:61f5::1
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"cert-manager.io/cluster-issuer":"letsencrypt"},"name":"schedule","namespace":"soxfive-beta"},"spec":{"ingressClassName":"nginx","rules":[{"host":"schedule.hez.soxfive.com","http":{"paths":[{"backend":{"service":{"name":"schedule","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["schedule.hez.soxfive.com"],"secretName":"schedule.hez.soxfive.com-tls"}]}}
+    creationTimestamp: "2022-09-25T21:16:24Z"
+    generation: 2
+    name: schedule
+    namespace: soxfive-beta
+    resourceVersion: "163922"
+    uid: d60c8f9d-efa3-4f14-aa2d-f10b32d7bd70
+  spec:
+    ingressClassName: nginx
+    rules:
+    - host: schedule.hez.soxfive.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: schedule
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
+    tls:
+    - hosts:
+      - schedule.hez.soxfive.com
+      secretName: schedule.hez.soxfive.com-tls
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 167.235.111.124
+      - ip: 2a01:4f8:1c1f:61f5::1
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"cert-manager.io/cluster-issuer":"letsencrypt"},"name":"stats","namespace":"soxfive-beta"},"spec":{"ingressClassName":"nginx","rules":[{"host":"stats.hez.soxfive.com","http":{"paths":[{"backend":{"service":{"name":"stats","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["stats.hez.soxfive.com"],"secretName":"stats.hez.soxfive.com-tls"}]}}
+    creationTimestamp: "2022-09-25T21:16:25Z"
+    generation: 2
+    name: stats
+    namespace: soxfive-beta
+    resourceVersion: "163950"
+    uid: c8ac8dfc-617c-48f4-a59f-0f5e5c5fc6a9
+  spec:
+    ingressClassName: nginx
+    rules:
+    - host: stats.hez.soxfive.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: stats
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
+    tls:
+    - hosts:
+      - stats.hez.soxfive.com
+      secretName: stats.hez.soxfive.com-tls
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 167.235.111.124
+      - ip: 2a01:4f8:1c1f:61f5::1
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"cert-manager.io/cluster-issuer":"letsencrypt"},"name":"user","namespace":"soxfive-beta"},"spec":{"ingressClassName":"nginx","rules":[{"host":"user.hez.soxfive.com","http":{"paths":[{"backend":{"service":{"name":"user","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["user.hez.soxfive.com"],"secretName":"user.hez.soxfive.com-tls"}]}}
+    creationTimestamp: "2022-09-25T21:16:26Z"
+    generation: 2
+    name: user
+    namespace: soxfive-beta
+    resourceVersion: "163977"
+    uid: 0d44f164-7341-4ce0-94d8-c35ca0750d71
+  spec:
+    ingressClassName: nginx
+    rules:
+    - host: user.hez.soxfive.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: user
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
+    tls:
+    - hosts:
+      - user.hez.soxfive.com
+      secretName: user.hez.soxfive.com-tls
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 167.235.111.124
+      - ip: 2a01:4f8:1c1f:61f5::1
+kind: List
+metadata:
+  resourceVersion: ""

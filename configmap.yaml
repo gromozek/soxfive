@@ -1,0 +1,61 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  data:
+    runtime-config.js: |
+      window['runConfig'] = {
+        BASE_URL_AUTH_SERVICE: 'https://auth.hez.soxfive.com',
+        BASE_URL_USER_SERVICE: 'https://user.hez.soxfive.com',
+        BASE_URL_STATS_SERVICE: 'https://stats.hez.soxfive.com',
+        BASE_URL_ACTIVATION_SERVICE: 'https://activation.hez.soxfive.com',
+        BASE_URL_PROXY_SERVICE: 'https://proxy.hez.soxfive.com',
+        BASE_URL_PUSHUP_SERVICE: 'https://pushup.hez.soxfive.com',
+        BASE_URL_SOCKET_PATH: '/socket.io',
+      }
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","data":{"runtime-config.js":"window['runConfig'] = {\n  BASE_URL_AUTH_SERVICE: 'https://auth.hez.soxfive.com',\n  BASE_URL_USER_SERVICE: 'https://user.hez.soxfive.com',\n  BASE_URL_STATS_SERVICE: 'https://stats.hez.soxfive.com',\n  BASE_URL_ACTIVATION_SERVICE: 'https://activation.hez.soxfive.com',\n  BASE_URL_PROXY_SERVICE: 'https://proxy.hez.soxfive.com',\n  BASE_URL_PUSHUP_SERVICE: 'https://pushup.hez.soxfive.com',\n  BASE_URL_SOCKET_PATH: '/socket.io',\n}\n"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"config-panel","namespace":"soxfive-beta"}}
+    creationTimestamp: "2022-10-08T10:53:08Z"
+    name: config-panel
+    namespace: soxfive-beta
+    resourceVersion: "2148536"
+    uid: 8951a404-b290-4448-84e4-9ba7adb30d3b
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIC/jCCAeagAwIBAgIBADANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwprdWJl
+      cm5ldGVzMB4XDTIyMDkyNTIwMTIzNloXDTMyMDkyMjIwMTIzNlowFTETMBEGA1UE
+      AxMKa3ViZXJuZXRlczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAPXo
+      Qntg6d4IM9Xe5WAk5CPRcytFD9Xi+6/CQniIc/bsvJHNYatSezJv2KnWXtTjMcjb
+      p/poSnmgh+u9EivIV6HWkScvY+HtgsyIY2KFdCW18Tx94wgMHXi50Rm+bj4pOwjh
+      52NEV3EWKj0/KiJ13Xo7ghTeviUZROVJv6Df9v0Y0Df/ZoPdGmMtrNDBIuHTMzbX
+      k1V7DVITVMvlp8+S4Agjt/wd19ZJ0SOPAyGh7zKBs7LYO/dtW+6bnZk3Fi1mrgw9
+      5iqg0vW86XiQUWnz6xIyGk26jFCwJ81QO2KpyTLDNbg/u8zBgG014z6u0w6BuIU5
+      VlgYqE+OwWZ3m+srNbUCAwEAAaNZMFcwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB
+      /wQFMAMBAf8wHQYDVR0OBBYEFG6wZdy4cn67akyOcGWH0jrn1kyAMBUGA1UdEQQO
+      MAyCCmt1YmVybmV0ZXMwDQYJKoZIhvcNAQELBQADggEBAIsfW0hcNmoMHMN17Fmg
+      X/eGxkZBZyMO3YNuZWdrLYjUnsnbD6Xx0EOpmrDEP1FP7XZtzhMTA0XrV0ToTNRs
+      qsbh1jIMtn2bAoCZ1Izfwqa/rJG6FOI6NjSiR+1BFOwBdnMdGb/ugREzsVF8Ond3
+      0X0qydnBq4GZ0mQkKynVp0D/eDrfV+eUDRMeL0lhQR10EsfqdBIZpUyW69K34ryT
+      Jigixq400rjQJWYAVNN49WWI5lqSD8NgZhvloHytaEtkL0XacIRZCIV7hl/kS4Cf
+      LDuurl1TzWoFnjlffTK4JFgZhP68Xa0Ud2g+tPB7p4KJVgYRrc/N6G5kD5urymHh
+      WmQ=
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2022-09-25T21:10:13Z"
+    name: kube-root-ca.crt
+    namespace: soxfive-beta
+    resourceVersion: "8633"
+    uid: 2d133dfe-d268-4d16-bde3-6020d7824c1c
+kind: List
+metadata:
+  resourceVersion: ""
