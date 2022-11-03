@@ -1,0 +1,75 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: soxfive-beta
+  labels:
+    app: pushup
+    tier: backend
+  name: pushup
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: pushup
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: pushup
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - pushup
+              topologyKey: kubernetes.io/hostname
+      containers:
+        - image: max3014/soxfive-backend-pushup-prod:05084717.9
+          readinessProbe:
+            httpGet:
+              path: /health/check
+              port: 80
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 5
+            failureThreshold: 5
+          livenessProbe:
+            httpGet:
+              path: /health/check
+              port: 80
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 5
+            failureThreshold: 5
+          name: soxfive-backend-pushup-prod
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: 500Mi
+              cpu: 500m
+            limits:
+              memory:  1500Mi
+              cpu: 1500m
+          volumeMounts:
+            - mountPath: /usr/src/app/log
+              name: log-volume
+          workingDir: /usr/src/app
+      restartPolicy: Always
+      volumes:
+        - name: log-volume
+          hostPath:
+            path: /var/www/pushup/log-soxfive
+            type: DirectoryOrCreate

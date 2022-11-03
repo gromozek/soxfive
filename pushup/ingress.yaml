@@ -4,12 +4,12 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"cert-manager.io/cluster-issuer":"letsencrypt"},"name":"pushup","namespace":"soxfive-beta"},"spec":{"ingressClassName":"nginx","rules":[{"host":"pushup.hez.soxfive.com","http":{"paths":[{"backend":{"service":{"name":"pushup","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}},{"host":"hezner.quickpushup.com","http":{"paths":[{"backend":{"service":{"name":"pushup","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["pushup.hez.soxfive.com","hezner.quickpushup.com"],"secretName":"pushup-tls"}]}}
+      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"cert-manager.io/cluster-issuer":"letsencrypt"},"creationTimestamp":"2022-09-25T21:16:22Z","generation":3,"name":"pushup","namespace":"soxfive-beta","resourceVersion":"456783","uid":"409b8002-c01b-449e-877f-2679175a80d0"},"spec":{"ingressClassName":"nginx","rules":[{"host":"pushup.hez.soxfive.com","http":{"paths":[{"backend":{"service":{"name":"pushup","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}},{"host":"hezner.quickpushup.com","http":{"paths":[{"backend":{"service":{"name":"pushup","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}},{"host":"beta.quickpushup.com","http":{"paths":[{"backend":{"service":{"name":"pushup","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["pushup.hez.soxfive.com","hezner.quickpushup.com","beta.quickpushup.com"],"secretName":"pushup-tls"}]},"status":{"loadBalancer":{"ingress":[{"ip":"167.235.111.124"},{"ip":"2a01:4f8:1c1f:61f5::1"}]}}}
   creationTimestamp: "2022-09-25T21:16:22Z"
-  generation: 3
+  generation: 4
   name: pushup
   namespace: soxfive-beta
-  resourceVersion: "456783"
+  resourceVersion: "6206923"
   uid: 409b8002-c01b-449e-877f-2679175a80d0
 spec:
   ingressClassName: nginx
